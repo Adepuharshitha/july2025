@@ -1,0 +1,14 @@
+class Solution(object):
+    def subsets(self, nums):
+        n=len(nums)
+        ans=[]
+        totalSubsets=(1<<n)
+        for val in range(totalSubsets):
+            temp=[]
+            for i in range(n):
+                if(val&(1<<i)):
+                    temp.append(nums[i])
+            ans.append(temp)
+        return ans
+                
+                
